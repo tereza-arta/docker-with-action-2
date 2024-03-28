@@ -19,11 +19,11 @@ jobs:
             - name: Dump GitHub context
               run : echo " Run_id is --- $IMAGE_TAG"  
 
-            #- name: Build of docker image
-            # run : |
-            #    docker build -t terezabisharyan/simple-cpp-app2:latest .
-            #    
-            #- name: Push of image on Docker Hub
-            #  run : |
-            #    docker login -u terezabisharyan -p ${{ secrets.DOCKER_PASSWORD }}    
-            #    docker push terezabisharyan/simple-cpp-app2:latest
+            - name: Build of docker image
+              run : |
+                docker build -t terezabisharyan/simple-cpp-app2:$IMAGE_TAG .
+                
+            - name: Push of image on Docker Hub
+              run : |
+                docker login -u terezabisharyan -p ${{ secrets.DOCKER_PASSWORD }}    
+                docker push terezabisharyan/simple-cpp-app2:$IMAGE_TAG
