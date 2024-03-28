@@ -12,12 +12,15 @@ jobs:
         steps:
             - name: Checkout of repo
               uses: actions/checkout@v3
+            
+            - name: Dump GitHub context
+              run : echo "${{ toJson(github) }}"  
 
-            - name: Build of docker image
-              run : |
-                docker build -t terezabisharyan/simple-cpp-app2:latest .
-                
-            - name: Push of image on Docker Hub
-              run : |
-                docker login -u terezabisharyan -p ${{ secrets.DOCKER_PASSWORD }}    
-                docker push terezabisharyan/simple-cpp-app2:latest
+            #- name: Build of docker image
+            # run : |
+            #    docker build -t terezabisharyan/simple-cpp-app2:latest .
+            #    
+            #- name: Push of image on Docker Hub
+            #  run : |
+            #    docker login -u terezabisharyan -p ${{ secrets.DOCKER_PASSWORD }}    
+            #    docker push terezabisharyan/simple-cpp-app2:latest
