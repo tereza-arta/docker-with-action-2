@@ -6,7 +6,7 @@ on:
             - main
 
 jobs:
-    push-of-Docker-Image:
+    Push-of-Docker-Image:
         runs-on: ubuntu-latest
 
         steps:
