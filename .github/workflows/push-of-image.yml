@@ -21,9 +21,9 @@ jobs:
 
             - name: Build of docker image
               run : |
-                docker build -t terezabisharyan/simple-cpp-app2:$IMAGE_TAG .
+                docker build -t terezabisharyan/simple-sh-image:$IMAGE_TAG .
                 
             - name: Push of image on Docker Hub
               run : |
                 docker login -u terezabisharyan -p ${{ secrets.DOCKER_PASSWORD }}    
-                docker push terezabisharyan/simple-cpp-app2:$IMAGE_TAG
+                docker push terezabisharyan/simple-sh-image:$IMAGE_TAG
