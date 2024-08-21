@@ -1,7 +1,7 @@
 name: Docker push on Docker Hub
 
 env:
-    IMAGE_TAG: ${{ github.run_id }}
+    IMAGE_TAG: ${{ github.sha }}
 
 on: 
     push:
